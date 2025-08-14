@@ -102,12 +102,43 @@ class TxLabelMapper extends SubClassMapperBase<TxLabel> {
     _$origin,
     opt: true,
   );
+  static int? _$height(TxLabel v) => v.height;
+  static const Field<TxLabel, int> _f$height = Field(
+    'height',
+    _$height,
+    opt: true,
+  );
+  static DateTime? _$time(TxLabel v) => v.time;
+  static const Field<TxLabel, DateTime> _f$time = Field(
+    'time',
+    _$time,
+    opt: true,
+  );
+  static int? _$fee(TxLabel v) => v.fee;
+  static const Field<TxLabel, int> _f$fee = Field('fee', _$fee, opt: true);
+  static int? _$value(TxLabel v) => v.value;
+  static const Field<TxLabel, int> _f$value = Field(
+    'value',
+    _$value,
+    opt: true,
+  );
+  static Map<String, dynamic>? _$rate(TxLabel v) => v.rate;
+  static const Field<TxLabel, Map<String, dynamic>> _f$rate = Field(
+    'rate',
+    _$rate,
+    opt: true,
+  );
 
   @override
   final MappableFields<TxLabel> fields = const {
     #ref: _f$ref,
     #label: _f$label,
     #origin: _f$origin,
+    #height: _f$height,
+    #time: _f$time,
+    #fee: _f$fee,
+    #value: _f$value,
+    #rate: _f$rate,
   };
 
   @override
@@ -123,6 +154,11 @@ class TxLabelMapper extends SubClassMapperBase<TxLabel> {
       ref: data.dec(_f$ref),
       label: data.dec(_f$label),
       origin: data.dec(_f$origin),
+      height: data.dec(_f$height),
+      time: data.dec(_f$time),
+      fee: data.dec(_f$fee),
+      value: data.dec(_f$value),
+      rate: data.dec(_f$rate),
     );
   }
 
@@ -183,8 +219,19 @@ extension TxLabelValueCopy<$R, $Out> on ObjectCopyWith<$R, TxLabel, $Out> {
 
 abstract class TxLabelCopyWith<$R, $In extends TxLabel, $Out>
     implements Bip329LabelCopyWith<$R, $In, $Out> {
+  MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
+  get rate;
   @override
-  $R call({String? ref, String? label, String? origin});
+  $R call({
+    String? ref,
+    String? label,
+    String? origin,
+    int? height,
+    DateTime? time,
+    int? fee,
+    int? value,
+    Map<String, dynamic>? rate,
+  });
   TxLabelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -197,11 +244,34 @@ class _TxLabelCopyWithImpl<$R, $Out>
   late final ClassMapperBase<TxLabel> $mapper =
       TxLabelMapper.ensureInitialized();
   @override
-  $R call({String? ref, String? label, Object? origin = $none}) => $apply(
+  MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
+  get rate => $value.rate != null
+      ? MapCopyWith(
+          $value.rate!,
+          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v) => call(rate: v),
+        )
+      : null;
+  @override
+  $R call({
+    String? ref,
+    String? label,
+    Object? origin = $none,
+    Object? height = $none,
+    Object? time = $none,
+    Object? fee = $none,
+    Object? value = $none,
+    Object? rate = $none,
+  }) => $apply(
     FieldCopyWithData({
       if (ref != null) #ref: ref,
       if (label != null) #label: label,
       if (origin != $none) #origin: origin,
+      if (height != $none) #height: height,
+      if (time != $none) #time: time,
+      if (fee != $none) #fee: fee,
+      if (value != $none) #value: value,
+      if (rate != $none) #rate: rate,
     }),
   );
   @override
@@ -209,6 +279,11 @@ class _TxLabelCopyWithImpl<$R, $Out>
     ref: data.get(#ref, or: $value.ref),
     label: data.get(#label, or: $value.label),
     origin: data.get(#origin, or: $value.origin),
+    height: data.get(#height, or: $value.height),
+    time: data.get(#time, or: $value.time),
+    fee: data.get(#fee, or: $value.fee),
+    value: data.get(#value, or: $value.value),
+    rate: data.get(#rate, or: $value.rate),
   );
 
   @override
@@ -241,12 +316,26 @@ class AddressLabelMapper extends SubClassMapperBase<AddressLabel> {
     _$origin,
     opt: true,
   );
+  static String? _$keypath(AddressLabel v) => v.keypath;
+  static const Field<AddressLabel, String> _f$keypath = Field(
+    'keypath',
+    _$keypath,
+    opt: true,
+  );
+  static List<int>? _$heights(AddressLabel v) => v.heights;
+  static const Field<AddressLabel, List<int>> _f$heights = Field(
+    'heights',
+    _$heights,
+    opt: true,
+  );
 
   @override
   final MappableFields<AddressLabel> fields = const {
     #ref: _f$ref,
     #label: _f$label,
     #origin: _f$origin,
+    #keypath: _f$keypath,
+    #heights: _f$heights,
   };
 
   @override
@@ -262,6 +351,8 @@ class AddressLabelMapper extends SubClassMapperBase<AddressLabel> {
       ref: data.dec(_f$ref),
       label: data.dec(_f$label),
       origin: data.dec(_f$origin),
+      keypath: data.dec(_f$keypath),
+      heights: data.dec(_f$heights),
     );
   }
 
@@ -327,8 +418,15 @@ extension AddressLabelValueCopy<$R, $Out>
 
 abstract class AddressLabelCopyWith<$R, $In extends AddressLabel, $Out>
     implements Bip329LabelCopyWith<$R, $In, $Out> {
+  ListCopyWith<$R, int, ObjectCopyWith<$R, int, int>>? get heights;
   @override
-  $R call({String? ref, String? label, String? origin});
+  $R call({
+    String? ref,
+    String? label,
+    String? origin,
+    String? keypath,
+    List<int>? heights,
+  });
   AddressLabelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -341,11 +439,28 @@ class _AddressLabelCopyWithImpl<$R, $Out>
   late final ClassMapperBase<AddressLabel> $mapper =
       AddressLabelMapper.ensureInitialized();
   @override
-  $R call({String? ref, String? label, Object? origin = $none}) => $apply(
+  ListCopyWith<$R, int, ObjectCopyWith<$R, int, int>>? get heights =>
+      $value.heights != null
+      ? ListCopyWith(
+          $value.heights!,
+          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v) => call(heights: v),
+        )
+      : null;
+  @override
+  $R call({
+    String? ref,
+    String? label,
+    Object? origin = $none,
+    Object? keypath = $none,
+    Object? heights = $none,
+  }) => $apply(
     FieldCopyWithData({
       if (ref != null) #ref: ref,
       if (label != null) #label: label,
       if (origin != $none) #origin: origin,
+      if (keypath != $none) #keypath: keypath,
+      if (heights != $none) #heights: heights,
     }),
   );
   @override
@@ -353,6 +468,8 @@ class _AddressLabelCopyWithImpl<$R, $Out>
     ref: data.get(#ref, or: $value.ref),
     label: data.get(#label, or: $value.label),
     origin: data.get(#origin, or: $value.origin),
+    keypath: data.get(#keypath, or: $value.keypath),
+    heights: data.get(#heights, or: $value.heights),
   );
 
   @override
@@ -529,12 +646,47 @@ class InputLabelMapper extends SubClassMapperBase<InputLabel> {
     _$origin,
     opt: true,
   );
+  static String? _$keypath(InputLabel v) => v.keypath;
+  static const Field<InputLabel, String> _f$keypath = Field(
+    'keypath',
+    _$keypath,
+    opt: true,
+  );
+  static int? _$value(InputLabel v) => v.value;
+  static const Field<InputLabel, int> _f$value = Field(
+    'value',
+    _$value,
+    opt: true,
+  );
+  static Map<String, double>? _$fvm(InputLabel v) => v.fvm;
+  static const Field<InputLabel, Map<String, double>> _f$fvm = Field(
+    'fvm',
+    _$fvm,
+    opt: true,
+  );
+  static int? _$height(InputLabel v) => v.height;
+  static const Field<InputLabel, int> _f$height = Field(
+    'height',
+    _$height,
+    opt: true,
+  );
+  static DateTime? _$time(InputLabel v) => v.time;
+  static const Field<InputLabel, DateTime> _f$time = Field(
+    'time',
+    _$time,
+    opt: true,
+  );
 
   @override
   final MappableFields<InputLabel> fields = const {
     #ref: _f$ref,
     #label: _f$label,
     #origin: _f$origin,
+    #keypath: _f$keypath,
+    #value: _f$value,
+    #fvm: _f$fvm,
+    #height: _f$height,
+    #time: _f$time,
   };
 
   @override
@@ -550,6 +702,11 @@ class InputLabelMapper extends SubClassMapperBase<InputLabel> {
       ref: data.dec(_f$ref),
       label: data.dec(_f$label),
       origin: data.dec(_f$origin),
+      keypath: data.dec(_f$keypath),
+      value: data.dec(_f$value),
+      fvm: data.dec(_f$fvm),
+      height: data.dec(_f$height),
+      time: data.dec(_f$time),
     );
   }
 
@@ -613,8 +770,18 @@ extension InputLabelValueCopy<$R, $Out>
 
 abstract class InputLabelCopyWith<$R, $In extends InputLabel, $Out>
     implements Bip329LabelCopyWith<$R, $In, $Out> {
+  MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>? get fvm;
   @override
-  $R call({String? ref, String? label, String? origin});
+  $R call({
+    String? ref,
+    String? label,
+    String? origin,
+    String? keypath,
+    int? value,
+    Map<String, double>? fvm,
+    int? height,
+    DateTime? time,
+  });
   InputLabelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -627,11 +794,34 @@ class _InputLabelCopyWithImpl<$R, $Out>
   late final ClassMapperBase<InputLabel> $mapper =
       InputLabelMapper.ensureInitialized();
   @override
-  $R call({String? ref, String? label, Object? origin = $none}) => $apply(
+  MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>?
+  get fvm => $value.fvm != null
+      ? MapCopyWith(
+          $value.fvm!,
+          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v) => call(fvm: v),
+        )
+      : null;
+  @override
+  $R call({
+    String? ref,
+    String? label,
+    Object? origin = $none,
+    Object? keypath = $none,
+    Object? value = $none,
+    Object? fvm = $none,
+    Object? height = $none,
+    Object? time = $none,
+  }) => $apply(
     FieldCopyWithData({
       if (ref != null) #ref: ref,
       if (label != null) #label: label,
       if (origin != $none) #origin: origin,
+      if (keypath != $none) #keypath: keypath,
+      if (value != $none) #value: value,
+      if (fvm != $none) #fvm: fvm,
+      if (height != $none) #height: height,
+      if (time != $none) #time: time,
     }),
   );
   @override
@@ -639,6 +829,11 @@ class _InputLabelCopyWithImpl<$R, $Out>
     ref: data.get(#ref, or: $value.ref),
     label: data.get(#label, or: $value.label),
     origin: data.get(#origin, or: $value.origin),
+    keypath: data.get(#keypath, or: $value.keypath),
+    value: data.get(#value, or: $value.value),
+    fvm: data.get(#fvm, or: $value.fvm),
+    height: data.get(#height, or: $value.height),
+    time: data.get(#time, or: $value.time),
   );
 
   @override
@@ -677,6 +872,36 @@ class OutputLabelMapper extends SubClassMapperBase<OutputLabel> {
     'spendable',
     _$spendable,
   );
+  static String? _$keypath(OutputLabel v) => v.keypath;
+  static const Field<OutputLabel, String> _f$keypath = Field(
+    'keypath',
+    _$keypath,
+    opt: true,
+  );
+  static int? _$value(OutputLabel v) => v.value;
+  static const Field<OutputLabel, int> _f$value = Field(
+    'value',
+    _$value,
+    opt: true,
+  );
+  static Map<String, double>? _$fvm(OutputLabel v) => v.fvm;
+  static const Field<OutputLabel, Map<String, double>> _f$fvm = Field(
+    'fvm',
+    _$fvm,
+    opt: true,
+  );
+  static int? _$height(OutputLabel v) => v.height;
+  static const Field<OutputLabel, int> _f$height = Field(
+    'height',
+    _$height,
+    opt: true,
+  );
+  static DateTime? _$time(OutputLabel v) => v.time;
+  static const Field<OutputLabel, DateTime> _f$time = Field(
+    'time',
+    _$time,
+    opt: true,
+  );
 
   @override
   final MappableFields<OutputLabel> fields = const {
@@ -684,6 +909,11 @@ class OutputLabelMapper extends SubClassMapperBase<OutputLabel> {
     #label: _f$label,
     #origin: _f$origin,
     #spendable: _f$spendable,
+    #keypath: _f$keypath,
+    #value: _f$value,
+    #fvm: _f$fvm,
+    #height: _f$height,
+    #time: _f$time,
   };
 
   @override
@@ -700,6 +930,11 @@ class OutputLabelMapper extends SubClassMapperBase<OutputLabel> {
       label: data.dec(_f$label),
       origin: data.dec(_f$origin),
       spendable: data.dec(_f$spendable),
+      keypath: data.dec(_f$keypath),
+      value: data.dec(_f$value),
+      fvm: data.dec(_f$fvm),
+      height: data.dec(_f$height),
+      time: data.dec(_f$time),
     );
   }
 
@@ -763,8 +998,19 @@ extension OutputLabelValueCopy<$R, $Out>
 
 abstract class OutputLabelCopyWith<$R, $In extends OutputLabel, $Out>
     implements Bip329LabelCopyWith<$R, $In, $Out> {
+  MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>? get fvm;
   @override
-  $R call({String? ref, String? label, String? origin, bool? spendable});
+  $R call({
+    String? ref,
+    String? label,
+    String? origin,
+    bool? spendable,
+    String? keypath,
+    int? value,
+    Map<String, double>? fvm,
+    int? height,
+    DateTime? time,
+  });
   OutputLabelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -777,17 +1023,36 @@ class _OutputLabelCopyWithImpl<$R, $Out>
   late final ClassMapperBase<OutputLabel> $mapper =
       OutputLabelMapper.ensureInitialized();
   @override
+  MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>?
+  get fvm => $value.fvm != null
+      ? MapCopyWith(
+          $value.fvm!,
+          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v) => call(fvm: v),
+        )
+      : null;
+  @override
   $R call({
     String? ref,
     String? label,
     Object? origin = $none,
     bool? spendable,
+    Object? keypath = $none,
+    Object? value = $none,
+    Object? fvm = $none,
+    Object? height = $none,
+    Object? time = $none,
   }) => $apply(
     FieldCopyWithData({
       if (ref != null) #ref: ref,
       if (label != null) #label: label,
       if (origin != $none) #origin: origin,
       if (spendable != null) #spendable: spendable,
+      if (keypath != $none) #keypath: keypath,
+      if (value != $none) #value: value,
+      if (fvm != $none) #fvm: fvm,
+      if (height != $none) #height: height,
+      if (time != $none) #time: time,
     }),
   );
   @override
@@ -796,6 +1061,11 @@ class _OutputLabelCopyWithImpl<$R, $Out>
     label: data.get(#label, or: $value.label),
     origin: data.get(#origin, or: $value.origin),
     spendable: data.get(#spendable, or: $value.spendable),
+    keypath: data.get(#keypath, or: $value.keypath),
+    value: data.get(#value, or: $value.value),
+    fvm: data.get(#fvm, or: $value.fvm),
+    height: data.get(#height, or: $value.height),
+    time: data.get(#time, or: $value.time),
   );
 
   @override
