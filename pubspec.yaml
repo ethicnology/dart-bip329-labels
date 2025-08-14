@@ -1,5 +1,5 @@
 name: bip329_labels
-description: "A new Flutter package project."
+description: "A Flutter/Dart implementation of BIP-329: Wallet Labels Export Format for Bitcoin wallets."
 version: 0.0.1
 homepage:
 
@@ -10,11 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dart_mappable: ^4.6.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  dart_mappable_builder: ^4.6.0
+  build_runner: ^2.5.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
