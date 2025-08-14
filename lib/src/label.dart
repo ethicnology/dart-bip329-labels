@@ -18,6 +18,11 @@ abstract class Bip329Label with Bip329LabelMappable {
     map.removeWhere((key, value) => value == null);
     return json.encode(map);
   }
+
+  factory Bip329Label.fromJson(String json) => Bip329LabelMapper.fromJson(json);
+
+  factory Bip329Label.fromMap(Map<String, dynamic> map) =>
+      Bip329LabelMapper.fromMap(map);
 }
 
 @MappableClass(discriminatorValue: 'tx')
