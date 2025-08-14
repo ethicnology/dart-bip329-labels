@@ -67,7 +67,7 @@ class TestVectors {
     "origin": "wpkh([d34db33f/84'/0'/4'])",
     "keypath": "/0/456",
     "value": 100000,
-    "fvm": {"USD": 1233.45, "EUR": 1050.20},
+    "fmv": {"USD": 1233.45, "EUR": 1050.20},
     "height": 850000,
     "time": "2025-01-23T11:40:35Z",
   };
@@ -80,7 +80,7 @@ class TestVectors {
     "spendable": true,
     "keypath": "/1/789",
     "value": 75000,
-    "fvm": {"USD": 987.65, "EUR": 840.15},
+    "fmv": {"USD": 987.65, "EUR": 840.15},
     "height": 850000,
     "time": "2025-01-23T11:40:35Z",
   };

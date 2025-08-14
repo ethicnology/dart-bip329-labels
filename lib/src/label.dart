@@ -14,6 +14,26 @@ abstract class Bip329Label with Bip329LabelMappable {
 
   factory Bip329Label.fromMap(Map<String, dynamic> map) =>
       Bip329LabelMapper.fromMap(map);
+
+  /// Export a list of labels to JSON Lines format (newline-delimited JSON)
+  /// Each label is serialized to a single line of JSON
+  static String toJsonLines(List<Bip329Label> labels) {
+    return labels.map((label) => label.toJson()).join('\n');
+  }
+
+  /// Import labels from JSON Lines format (newline-delimited JSON)
+  /// Each line should contain a valid JSON object representing a label
+  static List<Bip329Label> fromJsonLines(String jsonLines) {
+    if (jsonLines.trim().isEmpty) {
+      return [];
+    }
+
+    return jsonLines
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map((line) => Bip329Label.fromJson(line.trim()))
+        .toList();
+  }
 }
 
 @MappableClass(discriminatorValue: 'tx')

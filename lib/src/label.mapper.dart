@@ -122,8 +122,8 @@ class TxLabelMapper extends SubClassMapperBase<TxLabel> {
     _$value,
     opt: true,
   );
-  static Map<String, dynamic>? _$rate(TxLabel v) => v.rate;
-  static const Field<TxLabel, Map<String, dynamic>> _f$rate = Field(
+  static Map<String, double>? _$rate(TxLabel v) => v.rate;
+  static const Field<TxLabel, Map<String, double>> _f$rate = Field(
     'rate',
     _$rate,
     opt: true,
@@ -219,8 +219,7 @@ extension TxLabelValueCopy<$R, $Out> on ObjectCopyWith<$R, TxLabel, $Out> {
 
 abstract class TxLabelCopyWith<$R, $In extends TxLabel, $Out>
     implements Bip329LabelCopyWith<$R, $In, $Out> {
-  MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
-  get rate;
+  MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>? get rate;
   @override
   $R call({
     String? ref,
@@ -230,7 +229,7 @@ abstract class TxLabelCopyWith<$R, $In extends TxLabel, $Out>
     DateTime? time,
     int? fee,
     int? value,
-    Map<String, dynamic>? rate,
+    Map<String, double>? rate,
   });
   TxLabelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -244,7 +243,7 @@ class _TxLabelCopyWithImpl<$R, $Out>
   late final ClassMapperBase<TxLabel> $mapper =
       TxLabelMapper.ensureInitialized();
   @override
-  MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
+  MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>?
   get rate => $value.rate != null
       ? MapCopyWith(
           $value.rate!,
