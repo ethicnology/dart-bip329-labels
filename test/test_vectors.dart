@@ -39,6 +39,52 @@ class TestVectors {
     "origin": "wpkh([d34db33f/84'/0'/1'])",
   };
 
+  final Map<String, dynamic> txWithAdditionalFields = {
+    "type": "tx",
+    "ref": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456",
+    "label": "Transaction with Additional Fields",
+    "origin": "wpkh([d34db33f/84'/0'/2'])",
+    "height": 850000,
+    "time": "2025-01-23T11:40:35Z",
+    "fee": 2500,
+    "value": -50000,
+    "rate": {"USD": 105620.00, "EUR": 89500.50},
+  };
+
+  final Map<String, dynamic> addrWithAdditionalFields = {
+    "type": "addr",
+    "ref": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+    "label": "Address with Additional Fields",
+    "origin": "wpkh([d34db33f/84'/0'/3'])",
+    "keypath": "/1/123",
+    "heights": [850000, 850001, 850010],
+  };
+
+  final Map<String, dynamic> inputWithAdditionalFields = {
+    "type": "input",
+    "ref": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456:0",
+    "label": "Input with Additional Fields",
+    "origin": "wpkh([d34db33f/84'/0'/4'])",
+    "keypath": "/0/456",
+    "value": 100000,
+    "fvm": {"USD": 1233.45, "EUR": 1050.20},
+    "height": 850000,
+    "time": "2025-01-23T11:40:35Z",
+  };
+
+  final Map<String, dynamic> outputWithAdditionalFields = {
+    "type": "output",
+    "ref": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456:1",
+    "label": "Output with Additional Fields",
+    "origin": "wpkh([d34db33f/84'/0'/5'])",
+    "spendable": true,
+    "keypath": "/1/789",
+    "value": 75000,
+    "fvm": {"USD": 987.65, "EUR": 840.15},
+    "height": 850000,
+    "time": "2025-01-23T11:40:35Z",
+  };
+
   /// Get all test vectors as a list
   List<Map<String, dynamic>> get all => [
     tx,
@@ -48,6 +94,10 @@ class TestVectors {
     output,
     xpub,
     tx2,
+    txWithAdditionalFields,
+    addrWithAdditionalFields,
+    inputWithAdditionalFields,
+    outputWithAdditionalFields,
   ];
 
   /// Get test vectors by type
