@@ -12,7 +12,9 @@ void main() {
       test('should handle all test vectors without errors', () {
         for (final vector in testVectors.all) {
           final jsonVector = jsonEncode(vector);
+
           expect(() => Bip329Label.fromJson(jsonVector), returnsNormally);
+          expect(() => Bip329Label.fromMap(vector), returnsNormally);
 
           final label = Bip329Label.fromJson(jsonVector);
           expect(label.label, vector['label']);
