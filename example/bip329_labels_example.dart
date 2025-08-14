@@ -1,31 +1,3 @@
-# BIP-329 Labels
-
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-A Dart implementation of [BIP-329: Wallet Labels Export Format](https://github.com/bitcoin/bips/blob/master/bip-0329.mediawiki) for Bitcoin wallet label interoperability.
-
-## Installation
-
-```sh
-flutter pub add bip329_labels
-```
-
-## Supported Types
-
-| Type | Class | Description |
-|------|-------|-------------|
-| `tx` | `TxLabel` | Transaction labels |
-| `addr` | `AddressLabel` | Address labels |
-| `pubkey` | `PubkeyLabel` | Public key labels |
-| `input` | `InputLabel` | Input labels |
-| `output` | `OutputLabel` | Output labels (has `spendable` field) |
-| `xpub` | `XpubLabel` | Extended public key labels |
-
-
-## Usage
-
-```dart
 import 'package:bip329_labels/bip329_labels.dart';
 
 void main() {
@@ -35,9 +7,9 @@ void main() {
   final myLabel = 'Account #1 Transaction';
   final origin = "wpkh([d34db33f/84'/0'/1'])";
 
-  // Wrap it up in a TxLabel
+  // Wrap it up in a cozy TxLabel
   final txLabel = TxLabel(ref: txid, label: myLabel, origin: origin);
-  // Pack it into a Map and JSON
+  // Pack it into a map and JSON
   final txMap = txLabel.toMap();
   final txJson = txLabel.toJson();
 
@@ -73,10 +45,3 @@ void main() {
   assert(decodedOutputLabel.label == myOutputLabel);
   assert((decodedOutputLabel as OutputLabel).spendable == outputSpendable);
 }
-```
-
-
-
-## License
-
-MIT
