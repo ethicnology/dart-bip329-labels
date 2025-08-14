@@ -1,7 +1,7 @@
 # BIP-329 Labels
 
+[![codecov](https://codecov.io/gh/ethicnology/dart-bip329-labels/graph/badge.svg?token=7K2K6B8C82)](https://codecov.io/gh/ethicnology/dart-bip329-labels)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Dart implementation of [BIP-329: Wallet Labels Export Format](https://github.com/bitcoin/bips/blob/master/bip-0329.mediawiki) for Bitcoin wallet label interoperability.
 
