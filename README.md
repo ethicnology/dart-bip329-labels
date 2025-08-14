@@ -74,9 +74,3 @@ void main() {
   assert((decodedOutputLabel as OutputLabel).spendable == outputSpendable);
 }
 ```
-
-
-
-## License
-
-MIT
