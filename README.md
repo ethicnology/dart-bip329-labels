@@ -72,5 +72,27 @@ void main() {
   assert(decodedOutputLabel.ref == outputRef);
   assert(decodedOutputLabel.label == myOutputLabel);
   assert((decodedOutputLabel as OutputLabel).spendable == outputSpendable);
+
+  // --- JSON Lines Format (BIP-329 compliant export/import) ---
+
+  // Create a list of labels for export
+  final labels = [txLabel, outputLabel];
+
+  // Export to JSON Lines format (newline-delimited JSON)
+  final jsonLinesExport = Bip329Label.toJsonLines(labels);
+  print('JSON Lines Export:');
+  print(jsonLinesExport);
+
+  // Import back from JSON Lines format
+  final importedLabels = Bip329Label.fromJsonLines(jsonLinesExport);
+
+  // Verify round-trip integrity
+  assert(importedLabels.length == 2);
+  assert(importedLabels[0] is TxLabel);
+  assert(importedLabels[1] is OutputLabel);
+  assert(importedLabels[0].ref == txid);
+  assert((importedLabels[1] as OutputLabel).spendable == outputSpendable);
+
+  print('✅ JSON Lines round-trip successful!');
 }
 ```
