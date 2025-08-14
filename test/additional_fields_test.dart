@@ -122,15 +122,15 @@ void main() {
         expect(inputLabel.value, isA<int>());
       });
 
-      test('should handle fvm field correctly', () {
+      test('should handle fmv field correctly', () {
         final inputLabel = InputLabelMapper.fromMap(
           testVectors.inputWithAdditionalFields,
         );
 
-        expect(inputLabel.fvm, isNotNull);
-        expect(inputLabel.fvm!['USD'], 1233.45);
-        expect(inputLabel.fvm!['EUR'], 1050.20);
-        expect(inputLabel.fvm, isA<Map<String, double>>());
+        expect(inputLabel.fmv, isNotNull);
+        expect(inputLabel.fmv!['USD'], 1233.45);
+        expect(inputLabel.fmv!['EUR'], 1050.20);
+        expect(inputLabel.fmv, isA<Map<String, double>>());
       });
 
       test('should handle height field correctly', () {
@@ -162,7 +162,7 @@ void main() {
 
         expect(inputLabel.keypath, '/0/456');
         expect(inputLabel.value, 100000);
-        expect(inputLabel.fvm, isNotNull);
+        expect(inputLabel.fmv, isNotNull);
         expect(inputLabel.height, 850000);
         expect(inputLabel.time, isNotNull);
       });
@@ -187,15 +187,15 @@ void main() {
         expect(outputLabel.value, isA<int>());
       });
 
-      test('should handle fvm field correctly', () {
+      test('should handle fmv field correctly', () {
         final outputLabel = OutputLabelMapper.fromMap(
           testVectors.outputWithAdditionalFields,
         );
 
-        expect(outputLabel.fvm, isNotNull);
-        expect(outputLabel.fvm!['USD'], 987.65);
-        expect(outputLabel.fvm!['EUR'], 840.15);
-        expect(outputLabel.fvm, isA<Map<String, double>>());
+        expect(outputLabel.fmv, isNotNull);
+        expect(outputLabel.fmv!['USD'], 987.65);
+        expect(outputLabel.fmv!['EUR'], 840.15);
+        expect(outputLabel.fmv, isA<Map<String, double>>());
       });
 
       test('should handle height field correctly', () {
@@ -236,7 +236,7 @@ void main() {
 
         expect(outputLabel.keypath, '/1/789');
         expect(outputLabel.value, 75000);
-        expect(outputLabel.fvm, isNotNull);
+        expect(outputLabel.fmv, isNotNull);
         expect(outputLabel.height, 850000);
         expect(outputLabel.time, isNotNull);
         expect(outputLabel.spendable, true);
@@ -286,7 +286,7 @@ void main() {
 
           expect(deserializedInput.keypath, originalInput.keypath);
           expect(deserializedInput.value, originalInput.value);
-          expect(deserializedInput.fvm, originalInput.fvm);
+          expect(deserializedInput.fmv, originalInput.fmv);
           expect(deserializedInput.height, originalInput.height);
           expect(deserializedInput.time, originalInput.time);
         },
@@ -303,7 +303,7 @@ void main() {
 
           expect(deserializedOutput.keypath, originalOutput.keypath);
           expect(deserializedOutput.value, originalOutput.value);
-          expect(deserializedOutput.fvm, originalOutput.fvm);
+          expect(deserializedOutput.fmv, originalOutput.fmv);
           expect(deserializedOutput.height, originalOutput.height);
           expect(deserializedOutput.time, originalOutput.time);
           expect(deserializedOutput.spendable, originalOutput.spendable);

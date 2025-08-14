@@ -31,7 +31,7 @@ class TxLabel extends Bip329Label with TxLabelMappable {
   final int? value;
 
   /// Exchange rate at time of transaction. This is the value of a Bitcoin, expressed in another currency, at the time of the transaction, based on user preferences for data source. Multiple currencies can be given. Keys are ISO 4217 currency codes where possible. Example: "rate": { "USD":  105620.00 }
-  final Map<String, dynamic>? rate;
+  final Map<String, double>? rate;
 
   const TxLabel({
     required super.ref,
@@ -76,7 +76,7 @@ class InputLabel extends Bip329Label with InputLabelMappable {
   final int? value;
 
   /// Fair market value of the input/output relative to some other currency, typically fiat. The value should be a mapping, from currency code to decimal number. Example: "fmv": { "USD":  1233.45 }. Most situations will have only a single currency value, and it represents the real price of the goods/services expressed in some fiat currency. This is not an exchange *rate*, but an absolute value. By dividing by the value (above), it is possible to calculate an effective change rate for the transaction.
-  final Map<String, double>? fvm;
+  final Map<String, double>? fmv;
 
   /// An integer giving the block height where this fully confirmed transaction can be found. For transactions that are confirmed by less than 6 blocks, omit this field or provide a value of zero. (Background: Until it is fully confirmed, the "height" of a transaction is in flux and may vary due to chain reorgs. However, the consumer of the labels, may not know the current block height, so it cannot know if the height is "real" (firm, fixed) or just transitory. Therefore, it is important to omit the height unless the generating wallet considers the transaction to be confirmed.)
   final int? height;
@@ -90,7 +90,7 @@ class InputLabel extends Bip329Label with InputLabelMappable {
     super.origin,
     this.keypath,
     this.value,
-    this.fvm,
+    this.fmv,
     this.height,
     this.time,
   });
@@ -107,7 +107,7 @@ class OutputLabel extends Bip329Label with OutputLabelMappable {
   final int? value;
 
   /// Fair market value of the input/output relative to some other currency, typically fiat. The value should be a mapping, from currency code to decimal number. Example: "fmv": { "USD":  1233.45 }. Most situations will have only a single currency value, and it represents the real price of the goods/services expressed in some fiat currency. This is not an exchange *rate*, but an absolute value. By dividing by the value (above), it is possible to calculate an effective change rate for the transaction.
-  final Map<String, double>? fvm;
+  final Map<String, double>? fmv;
 
   /// An integer giving the block height where this fully confirmed transaction can be found. For transactions that are confirmed by less than 6 blocks, omit this field or provide a value of zero. (Background: Until it is fully confirmed, the "height" of a transaction is in flux and may vary due to chain reorgs. However, the consumer of the labels, may not know the current block height, so it cannot know if the height is "real" (firm, fixed) or just transitory. Therefore, it is important to omit the height unless the generating wallet considers the transaction to be confirmed.)
   final int? height;
@@ -122,7 +122,7 @@ class OutputLabel extends Bip329Label with OutputLabelMappable {
     required this.spendable,
     this.keypath,
     this.value,
-    this.fvm,
+    this.fmv,
     this.height,
     this.time,
   });

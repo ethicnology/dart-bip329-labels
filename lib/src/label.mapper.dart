@@ -658,10 +658,10 @@ class InputLabelMapper extends SubClassMapperBase<InputLabel> {
     _$value,
     opt: true,
   );
-  static Map<String, double>? _$fvm(InputLabel v) => v.fvm;
-  static const Field<InputLabel, Map<String, double>> _f$fvm = Field(
-    'fvm',
-    _$fvm,
+  static Map<String, double>? _$fmv(InputLabel v) => v.fmv;
+  static const Field<InputLabel, Map<String, double>> _f$fmv = Field(
+    'fmv',
+    _$fmv,
     opt: true,
   );
   static int? _$height(InputLabel v) => v.height;
@@ -684,7 +684,7 @@ class InputLabelMapper extends SubClassMapperBase<InputLabel> {
     #origin: _f$origin,
     #keypath: _f$keypath,
     #value: _f$value,
-    #fvm: _f$fvm,
+    #fmv: _f$fmv,
     #height: _f$height,
     #time: _f$time,
   };
@@ -704,7 +704,7 @@ class InputLabelMapper extends SubClassMapperBase<InputLabel> {
       origin: data.dec(_f$origin),
       keypath: data.dec(_f$keypath),
       value: data.dec(_f$value),
-      fvm: data.dec(_f$fvm),
+      fmv: data.dec(_f$fmv),
       height: data.dec(_f$height),
       time: data.dec(_f$time),
     );
@@ -770,7 +770,7 @@ extension InputLabelValueCopy<$R, $Out>
 
 abstract class InputLabelCopyWith<$R, $In extends InputLabel, $Out>
     implements Bip329LabelCopyWith<$R, $In, $Out> {
-  MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>? get fvm;
+  MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>? get fmv;
   @override
   $R call({
     String? ref,
@@ -778,7 +778,7 @@ abstract class InputLabelCopyWith<$R, $In extends InputLabel, $Out>
     String? origin,
     String? keypath,
     int? value,
-    Map<String, double>? fvm,
+    Map<String, double>? fmv,
     int? height,
     DateTime? time,
   });
@@ -795,11 +795,11 @@ class _InputLabelCopyWithImpl<$R, $Out>
       InputLabelMapper.ensureInitialized();
   @override
   MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>?
-  get fvm => $value.fvm != null
+  get fmv => $value.fmv != null
       ? MapCopyWith(
-          $value.fvm!,
+          $value.fmv!,
           (v, t) => ObjectCopyWith(v, $identity, t),
-          (v) => call(fvm: v),
+          (v) => call(fmv: v),
         )
       : null;
   @override
@@ -809,7 +809,7 @@ class _InputLabelCopyWithImpl<$R, $Out>
     Object? origin = $none,
     Object? keypath = $none,
     Object? value = $none,
-    Object? fvm = $none,
+    Object? fmv = $none,
     Object? height = $none,
     Object? time = $none,
   }) => $apply(
@@ -819,7 +819,7 @@ class _InputLabelCopyWithImpl<$R, $Out>
       if (origin != $none) #origin: origin,
       if (keypath != $none) #keypath: keypath,
       if (value != $none) #value: value,
-      if (fvm != $none) #fvm: fvm,
+      if (fmv != $none) #fmv: fmv,
       if (height != $none) #height: height,
       if (time != $none) #time: time,
     }),
@@ -831,7 +831,7 @@ class _InputLabelCopyWithImpl<$R, $Out>
     origin: data.get(#origin, or: $value.origin),
     keypath: data.get(#keypath, or: $value.keypath),
     value: data.get(#value, or: $value.value),
-    fvm: data.get(#fvm, or: $value.fvm),
+    fmv: data.get(#fmv, or: $value.fmv),
     height: data.get(#height, or: $value.height),
     time: data.get(#time, or: $value.time),
   );
@@ -884,10 +884,10 @@ class OutputLabelMapper extends SubClassMapperBase<OutputLabel> {
     _$value,
     opt: true,
   );
-  static Map<String, double>? _$fvm(OutputLabel v) => v.fvm;
-  static const Field<OutputLabel, Map<String, double>> _f$fvm = Field(
-    'fvm',
-    _$fvm,
+  static Map<String, double>? _$fmv(OutputLabel v) => v.fmv;
+  static const Field<OutputLabel, Map<String, double>> _f$fmv = Field(
+    'fmv',
+    _$fmv,
     opt: true,
   );
   static int? _$height(OutputLabel v) => v.height;
@@ -911,7 +911,7 @@ class OutputLabelMapper extends SubClassMapperBase<OutputLabel> {
     #spendable: _f$spendable,
     #keypath: _f$keypath,
     #value: _f$value,
-    #fvm: _f$fvm,
+    #fmv: _f$fmv,
     #height: _f$height,
     #time: _f$time,
   };
@@ -932,7 +932,7 @@ class OutputLabelMapper extends SubClassMapperBase<OutputLabel> {
       spendable: data.dec(_f$spendable),
       keypath: data.dec(_f$keypath),
       value: data.dec(_f$value),
-      fvm: data.dec(_f$fvm),
+      fmv: data.dec(_f$fmv),
       height: data.dec(_f$height),
       time: data.dec(_f$time),
     );
@@ -998,7 +998,7 @@ extension OutputLabelValueCopy<$R, $Out>
 
 abstract class OutputLabelCopyWith<$R, $In extends OutputLabel, $Out>
     implements Bip329LabelCopyWith<$R, $In, $Out> {
-  MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>? get fvm;
+  MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>? get fmv;
   @override
   $R call({
     String? ref,
@@ -1007,7 +1007,7 @@ abstract class OutputLabelCopyWith<$R, $In extends OutputLabel, $Out>
     bool? spendable,
     String? keypath,
     int? value,
-    Map<String, double>? fvm,
+    Map<String, double>? fmv,
     int? height,
     DateTime? time,
   });
@@ -1024,11 +1024,11 @@ class _OutputLabelCopyWithImpl<$R, $Out>
       OutputLabelMapper.ensureInitialized();
   @override
   MapCopyWith<$R, String, double, ObjectCopyWith<$R, double, double>>?
-  get fvm => $value.fvm != null
+  get fmv => $value.fmv != null
       ? MapCopyWith(
-          $value.fvm!,
+          $value.fmv!,
           (v, t) => ObjectCopyWith(v, $identity, t),
-          (v) => call(fvm: v),
+          (v) => call(fmv: v),
         )
       : null;
   @override
@@ -1039,7 +1039,7 @@ class _OutputLabelCopyWithImpl<$R, $Out>
     bool? spendable,
     Object? keypath = $none,
     Object? value = $none,
-    Object? fvm = $none,
+    Object? fmv = $none,
     Object? height = $none,
     Object? time = $none,
   }) => $apply(
@@ -1050,7 +1050,7 @@ class _OutputLabelCopyWithImpl<$R, $Out>
       if (spendable != null) #spendable: spendable,
       if (keypath != $none) #keypath: keypath,
       if (value != $none) #value: value,
-      if (fvm != $none) #fvm: fvm,
+      if (fmv != $none) #fmv: fmv,
       if (height != $none) #height: height,
       if (time != $none) #time: time,
     }),
@@ -1063,7 +1063,7 @@ class _OutputLabelCopyWithImpl<$R, $Out>
     spendable: data.get(#spendable, or: $value.spendable),
     keypath: data.get(#keypath, or: $value.keypath),
     value: data.get(#value, or: $value.value),
-    fvm: data.get(#fvm, or: $value.fvm),
+    fmv: data.get(#fmv, or: $value.fmv),
     height: data.get(#height, or: $value.height),
     time: data.get(#time, or: $value.time),
   );
