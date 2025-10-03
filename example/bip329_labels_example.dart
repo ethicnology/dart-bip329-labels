@@ -1,4 +1,5 @@
 import 'package:bip329_labels/bip329_labels.dart';
+import 'package:flutter/foundation.dart';
 
 void main() {
   // --- Serialization ---
@@ -52,8 +53,8 @@ void main() {
 
   // Export to JSON Lines format (newline-delimited JSON)
   final jsonLinesExport = Bip329Label.toJsonLines(labels);
-  print('JSON Lines Export:');
-  print(jsonLinesExport);
+  debugPrint('JSON Lines Export:');
+  debugPrint(jsonLinesExport);
 
   // Import back from JSON Lines format
   final importedLabels = Bip329Label.fromJsonLines(jsonLinesExport);
@@ -65,5 +66,5 @@ void main() {
   assert(importedLabels[0].ref == txid);
   assert((importedLabels[1] as OutputLabel).spendable == outputSpendable);
 
-  print('✅ JSON Lines round-trip successful!');
+  debugPrint('✅ JSON Lines round-trip successful!');
 }
