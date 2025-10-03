@@ -1,6 +1,6 @@
 name: bip329_labels
 description: "A Dart implementation for Flutter of BIP-329: Wallet Labels Export Format for Bitcoin wallets."
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/ethicnology/dart-bip329-labels
 
 environment:

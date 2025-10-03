@@ -1,3 +1,7 @@
+## 1.0.1
+
+- remove linter infos from example
+
 ## 1.0.0
 
 * **Core Features:**
@@ -13,4 +17,3 @@
   - `Bip329Label.toJsonLines()` - Export to newline-delimited JSON
   - `Bip329Label.fromJsonLines()` - Import from newline-delimited JSON
   - Full BIP-329 specification compliance
-
