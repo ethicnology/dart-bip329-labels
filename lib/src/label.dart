@@ -1,3 +1,6 @@
+@MappableLib(ignoreNull: true)
+library;
+
 import 'package:dart_mappable/dart_mappable.dart';
 
 part 'label.mapper.dart';
@@ -118,7 +121,10 @@ class InputLabel extends Bip329Label with InputLabelMappable {
 
 @MappableClass(discriminatorValue: 'output')
 class OutputLabel extends Bip329Label with OutputLabelMappable {
-  final bool spendable;
+  /// One of true or false, denoting if an output should be spendable by the
+  /// wallet. Optional per BIP-329: when omitted (null) the importing wallet
+  /// must not alter the output's existing spendable state.
+  final bool? spendable;
 
   /// The data needed to build full descriptor down to the specific address. This extends origin with the final two components that are unhardened (in the typical case, assuming BIP-84). Provide string /1/123 for wpkh([d34db33f/84'/0'/0'/1/123]). If the first character is not /, then it should be interpreted as a full descriptor, independent of origin (if any).
   final String? keypath;
@@ -139,7 +145,7 @@ class OutputLabel extends Bip329Label with OutputLabelMappable {
     required super.ref,
     required super.label,
     super.origin,
-    required this.spendable,
+    this.spendable,
     this.keypath,
     this.value,
     this.fmv,

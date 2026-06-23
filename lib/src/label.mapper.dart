@@ -2,6 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 // ignore_for_file: type=lint
+// ignore_for_file: invalid_use_of_protected_member
 // ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
 
@@ -44,6 +45,8 @@ class Bip329LabelMapper extends ClassMapperBase<Bip329Label> {
     #label: _f$label,
     #origin: _f$origin,
   };
+  @override
+  final bool ignoreNull = true;
 
   static Bip329Label _instantiate(DecodingData data) {
     throw MapperException.missingSubclass(
@@ -140,6 +143,8 @@ class TxLabelMapper extends SubClassMapperBase<TxLabel> {
     #value: _f$value,
     #rate: _f$rate,
   };
+  @override
+  final bool ignoreNull = true;
 
   @override
   final String discriminatorKey = 'type';
@@ -336,6 +341,8 @@ class AddressLabelMapper extends SubClassMapperBase<AddressLabel> {
     #keypath: _f$keypath,
     #heights: _f$heights,
   };
+  @override
+  final bool ignoreNull = true;
 
   @override
   final String discriminatorKey = 'type';
@@ -509,6 +516,8 @@ class PubkeyLabelMapper extends SubClassMapperBase<PubkeyLabel> {
     #label: _f$label,
     #origin: _f$origin,
   };
+  @override
+  final bool ignoreNull = true;
 
   @override
   final String discriminatorKey = 'type';
@@ -687,6 +696,8 @@ class InputLabelMapper extends SubClassMapperBase<InputLabel> {
     #height: _f$height,
     #time: _f$time,
   };
+  @override
+  final bool ignoreNull = true;
 
   @override
   final String discriminatorKey = 'type';
@@ -866,10 +877,11 @@ class OutputLabelMapper extends SubClassMapperBase<OutputLabel> {
     _$origin,
     opt: true,
   );
-  static bool _$spendable(OutputLabel v) => v.spendable;
+  static bool? _$spendable(OutputLabel v) => v.spendable;
   static const Field<OutputLabel, bool> _f$spendable = Field(
     'spendable',
     _$spendable,
+    opt: true,
   );
   static String? _$keypath(OutputLabel v) => v.keypath;
   static const Field<OutputLabel, String> _f$keypath = Field(
@@ -914,6 +926,8 @@ class OutputLabelMapper extends SubClassMapperBase<OutputLabel> {
     #height: _f$height,
     #time: _f$time,
   };
+  @override
+  final bool ignoreNull = true;
 
   @override
   final String discriminatorKey = 'type';
@@ -1035,7 +1049,7 @@ class _OutputLabelCopyWithImpl<$R, $Out>
     String? ref,
     String? label,
     Object? origin = $none,
-    bool? spendable,
+    Object? spendable = $none,
     Object? keypath = $none,
     Object? value = $none,
     Object? fmv = $none,
@@ -1046,7 +1060,7 @@ class _OutputLabelCopyWithImpl<$R, $Out>
       if (ref != null) #ref: ref,
       if (label != null) #label: label,
       if (origin != $none) #origin: origin,
-      if (spendable != null) #spendable: spendable,
+      if (spendable != $none) #spendable: spendable,
       if (keypath != $none) #keypath: keypath,
       if (value != $none) #value: value,
       if (fmv != $none) #fmv: fmv,
@@ -1105,6 +1119,8 @@ class XpubLabelMapper extends SubClassMapperBase<XpubLabel> {
     #label: _f$label,
     #origin: _f$origin,
   };
+  @override
+  final bool ignoreNull = true;
 
   @override
   final String discriminatorKey = 'type';
