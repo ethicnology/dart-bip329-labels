@@ -1,3 +1,9 @@
+## 2.0.0
+
+* **Breaking — `OutputLabel.spendable` is now `bool?` (was required `bool`):** per BIP-329 `spendable` is optional and "if omitted, the importing wallet should not alter these values", so an omitted `spendable` now parses to `null` (the spec's "do not alter" state) instead of throwing — previously a valid BIP-329 output record without `spendable` failed to parse. Consumers reading the field must handle `null` (e.g. check `spendable == false` for an explicitly do-not-spend output).
+* **Serialization omits null/absent fields (`ignoreNull`):** optional fields that are null are no longer emitted as `"field": null`; they are omitted, matching the spec's examples, and an absent `spendable` round-trips as absent.
+* **Tooling:** SDK floor raised to Dart `^3.8.0` (minimum required by `flutter_lints ^6.0.0`); `dart_mappable` runtime constraint unchanged (`^4.6.0`) so consumer compatibility is otherwise preserved.
+
 ## 1.0.1
 
 - remove linter infos from example
